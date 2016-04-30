@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -6,12 +6,52 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="johnkagga.me.alex_farm.MainActivityFragment"
+              android:orientation="vertical"
+                tools:context=".ui.MainActivityFragment"
                 tools:showIn="@layout/activity_main">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="Tracking Animals"
+        android:textSize="30sp"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"
+        />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="4">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="CurrentUid"
+               android:textSize="20sp"
+               android:layout_weight="2"
+               />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               tools:text="Current Uid"
+               android:layout_weight="2"
+               android:id="@+id/currentUid"
+               android:textColor="@color/colorPrimaryDark"
+               android:textSize="20sp"/>
+
+
+       </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package johnkagga.me.alex_farm;
+package johnkagga.me.alex_farm.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import johnkagga.me.alex_farm.R;
 
 public class MainActivity extends AppCompatActivity {
 
