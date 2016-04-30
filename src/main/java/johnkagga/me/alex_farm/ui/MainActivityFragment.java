@@ -13,6 +13,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 import johnkagga.me.alex_farm.R;
+import johnkagga.me.alex_farm.model.TrackData;
 import johnkagga.me.alex_farm.utils.Constants;
 
 /**
@@ -20,16 +21,19 @@ import johnkagga.me.alex_farm.utils.Constants;
  */
 public class MainActivityFragment extends Fragment {
 
-    protected TextView currentUid;
+    protected TextView mCurrentUid, mArea, mLocation;
+
     public MainActivityFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        currentUid = (TextView) rootView.findViewById(R.id.currentUid);
+        mCurrentUid = (TextView) rootView.findViewById(R.id.currentUid);
+        mArea = (TextView) rootView.findViewById(R.id.area);
+        mLocation = (TextView) rootView.findViewById(R.id.location);
 
         Firebase firebase = new Firebase(Constants.FIREBASE_URL);
 
@@ -38,9 +42,11 @@ public class MainActivityFragment extends Fragment {
         farmNode.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                long capturedTag = (long) dataSnapshot.child("CapturedTag").getValue();
+                TrackData trackData = dataSnapshot.getValue(TrackData.class);
+                mCurrentUid.setText(String.format("%d", trackData.getCapturedTag()));
+                mArea.setText(trackData.getArea());
+                mLocation.setText(trackData.getLocation());
 
-                currentUid.setText(String.format("%d", capturedTag));
             }
 
             @Override

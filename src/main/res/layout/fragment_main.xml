@@ -47,8 +47,62 @@
                android:textColor="@color/colorPrimaryDark"
                android:textSize="20sp"/>
 
-
        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Area"
+                android:textSize="20sp"
+                android:layout_weight="2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Area"
+                android:layout_weight="2"
+                android:id="@+id/area"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textSize="20sp"
+                android:layout_weight="2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Location"
+                android:layout_weight="2"
+                android:id="@+id/location"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>
